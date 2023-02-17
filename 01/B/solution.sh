@@ -35,3 +35,5 @@ do
 done
 
 echo $topThree
+
+# Answer = 198041

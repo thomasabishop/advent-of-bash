@@ -1,0 +1,38 @@
+Two lines of two columns. Each line is a round.
+
+Total unique values would be: 
+
+A Y
+B X
+C Z
+
+First column is opponents move
+Second column is your move based on stragegy
+
+A = rock (opponent)
+B = paper (opponent)
+C = scissors (opponent)
+
+X = rock (you),     score count = 1
+Y = paper (you),    score count = 2
+Z = scissors (you), score count = 3
+
+Calculating the score:
+
+Total score is the sum of your scores for each round.
+You calculate your score for a single round as follows: 
+   
+    Score for the shape you selected (1, 2 or 3) +
+    Score for outcome of round (lose = 0, draw = 3, win = 6) 
+
+So for:
+
+A Y => rock + paper, you win, score => 2 + 6 = 8  
+B X => paper + rock, you lose, score => 1 + 0 = 1
+C Z => scissors + scissors, draw, score => 3 + 3 = 6
+
+Total => 8 + 1 + 6 = 15
+
+1 2
+2 1
+3 3

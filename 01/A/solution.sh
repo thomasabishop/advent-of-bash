@@ -27,3 +27,5 @@ do
 done < "$input"
 
 echo ${highest}
+
+# Answer = 68787
