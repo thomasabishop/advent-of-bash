@@ -3,50 +3,52 @@
 input="../input.txt"
 test="../test-input.txt"
 otherInput="../other-input.txt"
+
 function convertMoveToInt {
     case $1 in
         A | X )
             echo 1
         ;;
         
-        B | Y ) echo 2
+        B | Y )
+            echo 2
         ;;
         
         C | Z )
             echo 3
         ;;
-        # *)
-        #     echo 0
-        # ;;
+        *)
+            echo 0
+        ;;
     esac
 }
 
+function abs {
+    ele=$1
+    echo ${ele#-}
+}
+
 declare -i totalScore=0
-
-declare -i linecount=0
-
-# while read line; do
-#     (( linecount++ ))
-
-#     echo ${linecount} > linecount.txt
-# done < ${input}
-
-
 
 
 while read line; do
     declare -i opponentMove=$(convertMoveToInt $(echo $line | awk '{print $1}' ))
     declare -i myMove=$(convertMoveToInt $( echo $line | awk '{print $2}' ))
-    if [ "$myMove" -gt "$opponentMove" ]; then
-        (( totalScore+=myMove+6 ))
-        elif [ "$myMove" -eq "$opponentMove" ]; then
+    declare -i diff=$(($opponentMove-$myMove))
+    declare -i absDiff=$(abs $diff)
+    
+    if [ "$myMove" -eq "$opponentMove" ]; then
         (( totalScore+=myMove+3 ))
-    else
-        (( totalScore+=myMove ))
+        elif [ $absDiff -eq 2 ] && [ "$myMove" -gt "$opponentMove" ]; then
+        (( totalScore+=myMove))
+        elif [ $absDiff -eq 2 ] && [ "$opponentMove" -gt "$myMove" ]; then
+        (( totalScore+=myMove+6))
+        elif [ $absDiff -eq 1 ] && [ "$opponentMove" -gt "$myMove" ]; then
+        (( totalScore+=myMove))
+        elif [ $absDiff -eq 1 ] && [ "$myMove" -gt "$opponentMove" ]; then
+        (( totalScore+=myMove+6))
     fi
-    echo ${totalScore}
-done < "$test"
+done < "$input"
 
 echo ${totalScore}
 
-# Something is going wrong with the line parsing. Write in JS and compare answers.

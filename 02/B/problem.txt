@@ -1,0 +1,9 @@
+This time you still calculate the total in the previous way but there is an additional step.
+
+You need to read the second character which determines how the round needs to end.
+
+X = you need to lose
+Y = you need to drawer
+Z = you need to win
+
+Depending on the move of the opponent you must derive what you should play in response in order to meet the specified ending. 
