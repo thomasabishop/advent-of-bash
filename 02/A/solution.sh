@@ -1,8 +1,6 @@
 #!/bin/bash
 
 input="../input.txt"
-test="../test-input.txt"
-otherInput="../other-input.txt"
 
 function convertMoveToInt {
     case $1 in

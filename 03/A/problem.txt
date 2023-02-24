@@ -1,0 +1,20 @@
+Take a string of letter characters such as `vJrwpWtwJgWrhcsFMMfFFhFp`.
+
+Split it in half. 
+
+In the example the string has a length of 24, so each half will be 12 characters long:
+    -   vJrwpWtwJgWr
+    -   hcsFMMfFFhFp
+
+Identify the character(s) that occur in both halves. (There could be more than one character that exists in both.)
+
+In the example there is only one this is `p`. 
+
+Each letter has a "priority weighting":
+    -   chars a - z have a priority 1 through 26
+    -   chars A - Z have a priority 27 through 52
+
+For each line of input find the sum of the repeating characters and then sum to find the overall total. 
+
+
+individual_segment_length=$(( string_length/2 ))
