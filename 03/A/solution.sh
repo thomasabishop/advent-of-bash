@@ -42,6 +42,8 @@ while read line; do
     for x in "${uniqueMatches[@]}"; do
         (( grandTotal+=alphabetMap[$x] ))
     done
-done < $input
+done < $testInput
 
-echo $grandTotal
+#echo $grandTotal
+
+# Add note on pushing into array
