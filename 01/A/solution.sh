@@ -28,4 +28,4 @@ done < "$input"
 
 echo ${highest}
 
-# Answer = 68787
+# Solution = 68787

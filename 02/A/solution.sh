@@ -50,3 +50,4 @@ done < "$input"
 
 echo ${totalScore}
 
+# Solution = 11767

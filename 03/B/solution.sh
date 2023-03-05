@@ -40,3 +40,5 @@ while mapfile -t -n 3 ary && ((${#ary[@]})); do
 done < $input
 
 echo $grandTotal
+
+# Solution = 2548

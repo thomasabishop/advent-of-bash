@@ -36,4 +36,4 @@ done
 
 echo $topThree
 
-# Answer = 198041
+# Solution = 198041

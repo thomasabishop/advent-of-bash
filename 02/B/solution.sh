@@ -97,9 +97,6 @@ function deriveMove {
     esac
 }
 
-
-# echo $(deriveMove C Z)
-
 while read line; do
     opponentMoveChar=$(echo $line | awk '{print $1}')
     instructionChar=$(echo $line | awk '{print $2}')
@@ -126,3 +123,5 @@ while read line; do
 done < "$testInput"
 
 echo ${totalScore}
+
+# Solution = 13886

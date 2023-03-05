@@ -44,6 +44,6 @@ while read line; do
     done
 done < $testInput
 
-#echo $grandTotal
+echo $grandTotal
 
-# Add note on pushing into array
+# Solution = 7903
