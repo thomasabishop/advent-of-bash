@@ -1,0 +1,46 @@
+Each line of the input is a pair of number ranges separated by a comma, e.g: 
+
+2-4,6-8
+
+Each range can be expanded, i.e 
+
+2, 3, 4
+6, 7, 8
+
+Some of the ranges overlap, e.g:
+
+....567..  5-7
+......789  7-9
+
+Some of the pairs with overlapping ranges completely encompass each other. For example:
+
+.2345678.  2-8
+..34567..  3-7
+
+.....6...  6-6
+...456...  4-6
+
+Find the total number of pairs that possess this property.
+
+Algorithm for solution: 
+
+-   Establish that an overlap exists
+-   Sum both ranges: A and B 
+-   Say B is the highest
+-   Subtract A from B giving C 
+-   If complete overlap, C should equal the sum of the numbers not in the range of B 
+
+Applied example:
+
+    A = 2, 3, 4
+    B = 1, 2, 3, 4, 5 
+
+    Sum(A) = 2 + 3 + 4 (9)
+    Sum(B) = 1 + 2 + 3 + 4 + 5 (15)
+
+    15 - 9 = 6 
+
+    6 = 5 + 1 
+    
+     
+
